@@ -17,7 +17,7 @@ Create project
 
 Project -> Assets -> Right Click -> Create -> C# Script
 
-HelloWorld.cs
+`HelloWorld.cs`
 
 
 Save 

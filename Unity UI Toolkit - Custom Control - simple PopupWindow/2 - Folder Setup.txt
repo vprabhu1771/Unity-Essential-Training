@@ -1,0 +1,17 @@
+Project -> Assets -> Right Click -> Create -> Folder
+
+PopupWindow
+
+
+
+
+=\===============
+
+Project -> Assets -> Right Click -> Create -> C# Script
+
+HelloWorld.cs
+
+
+Run
+
+Click Play Button

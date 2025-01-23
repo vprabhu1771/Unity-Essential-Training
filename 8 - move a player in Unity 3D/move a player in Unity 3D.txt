@@ -1,0 +1,31 @@
+Unity Hub -> New project -> All templates -> 3D Core 
+
+Project name
+3D Fun
+
+Location
+Select Location
+
+Create project
+
+
+
+--------------------
+
+Hierarchy -> Right Click -> 3D Object -> Terrain
+
+
+Hierarchy -> Right Click -> 3D Object -> Cube
+
+OR
+
+Hierarchy -> Terrain -> Right Click -> Cube
+
+
+---------------------
+Folder Setup
+
+Project -> Assets -> Right Click -> Create -> Folder -> Scripts
+
+
+Project -> Assets -> Scripts -> Right Click -> Create -> C# Script -> PlayerMovement

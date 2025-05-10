@@ -16,6 +16,25 @@ https://www.spriters-resource.com/mobile/flappybird/sheet/59894/
 https://www.dafont.com/04b-19.font
 ```
 
+# Folder Setup 
+
+Assets -> Fonts
+
+Assets -> Materials
+
+Assets -> Prefabs
+
+Assets -> Scripts
+
+Assets -> Sprites
+
+
+# Create New Material 
+
+Assets -> Materials -> Right Click -> Create -> Material -> New Material rename Background
+
+Inspector -> Shader -> Unit -> Texture -> Drag background.png to Base (RGB)
+
 # Import Sprites
 
 Assets -> Sprites -> Import

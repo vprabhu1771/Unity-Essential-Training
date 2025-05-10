@@ -35,6 +35,23 @@ Assets -> Materials -> Right Click -> Create -> Material -> New Material rename 
 
 Inspector -> Shader -> Unit -> Texture -> Drag background.png to Base (RGB)
 
+# Create Background GameObject
+
+Hierarchy -> Right Click -> Create Empty -> GameObject -> rename to Background
+
+# Add Mesh Filter to Background GameObject
+
+Hierarchy -> Background -> Add Component -> Mesh Filter -> Mesh -> Quad
+
+# Add Mesh Mesh Render to Background GameObject
+
+Hierarchy -> Background -> Add Component -> Materials -> Select Background Material
+
+
+# Change Background Sprite to Wrap Mode -> Repeat 
+
+Assets -> Sprites -> Background -> Wrap Mode Repeat
+
 # Import Sprites
 
 Assets -> Sprites -> Import

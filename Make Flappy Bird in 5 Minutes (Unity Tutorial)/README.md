@@ -3,6 +3,16 @@
 https://www.youtube.com/watch?v=hKGzSYXPQwY
 ```
 
+# Download The TileSet
+```
+https://www.spriters-resource.com/mobile/flappybird/sheet/59894/
+```
+
+# Download The Flappy Bird font
+```
+https://www.dafont.com/04b-19.font
+```
+
 # Import Sprites
 
 Assets -> Sprites -> Import

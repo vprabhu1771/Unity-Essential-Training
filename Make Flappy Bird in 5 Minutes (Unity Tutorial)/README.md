@@ -28,12 +28,34 @@ Assets -> Scripts
 
 Assets -> Sprites
 
+# Import Sprites
+
+Assets -> Sprites -> Import
+
+# Go To Inspector
+
+Sprite Mode -> Single
+
+Pixels Per Unit -> 24
+
+Advanced -> Wrap Mode -> Clamp
+
+Advanced -> Filter Mode -> Point (no filter)
+
+Default -> Max Size -> 256
+
+Resize Algorithm -> Mitchell
+
+Format -> RGBA 32 bit
+
+Click -> Apply
+
 
 # Create New Material 
 
 Assets -> Materials -> Right Click -> Create -> Material -> New Material rename Background
 
-Inspector -> Shader -> Unit -> Texture -> Drag background.png to Base (RGB)
+Inspector -> Shader -> Unlit -> Texture -> Drag background.png to Base (RGB)
 
 # Create Background GameObject
 

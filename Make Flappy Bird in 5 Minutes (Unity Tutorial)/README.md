@@ -138,3 +138,38 @@ public class Parallax : MonoBehaviour
     }
 }
 ```
+
+Add Score Text
+
+Hierarchy -> Right Click -> UI -> Text
+
+or
+
+Hierarchy -> Right Click -> UI -> Legacy -> Text
+
+
+# Config Score Text Canvas 
+
+Canvas Scaler -> UI Scale Mode -> Constant Pixel Size
+
+# Rename Text to Score
+
+Select Text -> Rename to Score
+
+# Config Score Text
+
+Pos X 0
+
+Pos Y -25
+
+Pos Z 0
+
+Width 250
+
+Height 30
+
+
+# Text Style
+
+Font Size -> 35
+

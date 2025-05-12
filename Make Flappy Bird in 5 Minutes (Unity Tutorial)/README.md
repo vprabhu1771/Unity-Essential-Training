@@ -52,21 +52,7 @@ Hierarchy -> Background -> Add Component -> Materials -> Select Background Mater
 
 Assets -> Sprites -> Background -> Wrap Mode Repeat
 
-# Import Sprites
 
-Assets -> Sprites -> Import
-
-# Go To Inspector
-
-Sprite Mode -> Multiple
-
-Advanced -> Filter Mode -> Point (no filter)
-
-Advanced -> Default -> Compression -> None
-
-Click -> Apply
-
-Click -> Sprite Editor
 
 
 

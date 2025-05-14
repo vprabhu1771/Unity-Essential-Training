@@ -51,7 +51,7 @@ Format -> RGBA 32 bit
 Click -> Apply
 
 
-# Create New Material 
+# Create New Material for Background
 
 Assets -> Materials -> Right Click -> Create -> Material -> New Material rename Background
 
@@ -78,6 +78,68 @@ Assets -> Sprites -> Background -> Wrap Mode Repeat
 
 
 
+Here's a **formatted README-style guide** based on your instructions for creating a repeating background in Unity using a material and mesh:
+
+---
+
+# 🎮 Setting Up a Repeating Background in Unity
+
+This guide walks you through the steps to create a repeating background using a material, quad mesh, and custom texture.
+
+---
+
+## 🧱 Step 1: Create a New Material for the Background
+
+1. Navigate to: `Assets`
+2. Right-click → **Create** → **Material**
+3. Rename the material to: `Background`
+4. In the **Inspector**, set:
+
+   * `Shader` → **Unlit** → **Texture**
+   * Drag and drop your `background.png` into the `Base (RGB)` texture slot
+
+---
+
+## 🏗️ Step 2: Create the Background GameObject
+
+1. In the **Hierarchy**, right-click → **Create Empty**
+2. Rename it to: `Background`
+
+---
+
+## 🧩 Step 3: Add Mesh Filter to Background
+
+1. Select the `Background` GameObject
+2. In the **Inspector**, click **Add Component**
+3. Search and add: **Mesh Filter**
+4. Set `Mesh` to: **Quad**
+
+---
+
+## 🎨 Step 4: Add Mesh Renderer with Background Material
+
+1. With `Background` still selected, click **Add Component**
+2. Add: **Mesh Renderer**
+3. In the **Mesh Renderer** component:
+
+   * Under `Materials`, assign your `Background` material
+
+---
+
+## 🖼️ Step 5: Set Texture Wrap Mode to Repeat
+
+1. Navigate to your texture: `Assets` → `Sprites` → `Background`
+2. Select the texture and look at the **Inspector**
+3. Change:
+
+   * `Wrap Mode` → **Repeat**
+   * Click **Apply**
+
+---
+
+✅ Now your background texture will tile properly across the quad using the repeat wrap mode. You can control tiling via the material’s texture scale settings.
+
+Let me know if you want a parallax background or to animate the texture offset!
 
 
 ```

@@ -205,23 +205,6 @@ This guide helps you create a **repeating ground texture** using a material and 
 Need help with positioning or animating the ground? Just ask!
 
 
-
-
-# Create Spawner Game Object
-
-Hierarchy -> Right Click -> Create Empty -> GameObject -> rename to Spawner
-
-rename tag to Spawner
-
-under Transform -> reset
-
-under Transform -> position -> x 12
-
-
-drag Spawner Script to Spawner GameObject
-
-drag Prefabs -> Pipes to Spawner Prefab
-
 `Parallax`
 
 ```
@@ -358,6 +341,24 @@ public class Player : MonoBehaviour
 
 }
 ```
+
+
+# Create Spawner Game Object
+
+Hierarchy -> Right Click -> Create Empty -> GameObject -> rename to Spawner
+
+rename tag to Spawner
+
+under Transform -> reset
+
+under Transform -> position -> x 12
+
+
+drag Spawner Script to Spawner GameObject
+
+drag Prefabs -> Pipes to Spawner Prefab
+
+# Add Score Text
 
 Add Score Text
 

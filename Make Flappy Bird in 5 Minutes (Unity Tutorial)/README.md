@@ -206,6 +206,23 @@ Need help with positioning or animating the ground? Just ask!
 
 
 
+
+# Create Spawner Game Object
+
+Hierarchy -> Right Click -> Create Empty -> GameObject -> rename to Spawner
+
+rename tag to Spawner
+
+under Transform -> reset
+
+under Transform -> position -> x 12
+
+
+drag Spawner Script to Spawner GameObject
+
+drag Prefabs -> Pipes to Spawner Prefab
+
+
 ```
 using System.Collections;
 using System.Collections.Generic;

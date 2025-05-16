@@ -110,6 +110,21 @@ void Update()
         Debug.Log("A button pressed");
     }
 
+    if (Input.GetKeyDown(KeyCode.JoystickButton1))
+    {
+        Debug.Log("B button pressed");
+    }
+    
+    if (Input.GetKeyDown(KeyCode.JoystickButton2))
+    {
+        Debug.Log("x button pressed");
+    }
+    
+    if (Input .GetKeyDown(KeyCode.JoystickButton3))
+    {
+        Debug.Log("y button pressed");
+    }
+
     float moveX = Input.GetAxis("Horizontal");
     float moveY = Input.GetAxis("Vertical");
 }

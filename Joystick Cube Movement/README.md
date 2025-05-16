@@ -1,13 +1,52 @@
-To move a cube in Unity using an analog controller (e.g., Xbox or PlayStation joystick), you're already on the right track by reading the `Horizontal` and `Vertical` axes using:
+Sure! Here's a complete **README-style** guide that explains how to create a cube in Unity, attach the movement script, and use a game controller to move it with the analog stick.
 
-```csharp
-float moveX = Input.GetAxis("Horizontal");
-float moveY = Input.GetAxis("Vertical");
-```
+---
 
-Now, to make the cube actually move in your scene, you need to apply this movement to the cube’s `Transform`. Here's a complete example that moves a cube using the left analog stick:
+# 🎮 Unity Cube Movement with Analog Controller
 
-### ✅ Final Working Script:
+This guide will help you:
+
+* Create a Cube in Unity
+* Add movement using the left analog stick of a game controller (e.g., Xbox or PlayStation)
+* Detect button presses (A, B, X, Y)
+
+---
+
+## ✅ Requirements
+
+* Unity installed (any recent version)
+* A connected game controller (e.g., Xbox or PS4/PS5 controller)
+
+---
+
+## 🧱 Step 1: Create a New Unity Project
+
+1. Open Unity Hub
+2. Click **New Project**
+3. Choose **3D Core**
+4. Name your project (e.g., `CubeController`)
+5. Click **Create**
+
+---
+
+## 🟦 Step 2: Create a Cube
+
+1. In the **Hierarchy** panel, right-click → `3D Object` → `Cube`
+2. Rename the cube to `Player`
+3. Optional: Reset the transform (`Right-click → Reset`)
+
+---
+
+## 🧾 Step 3: Create the Movement Script
+
+1. In the **Project** panel:
+
+   * Right-click in the `Assets` folder → `Create` → `C# Script`
+   * Name it `CubeController`
+
+2. Double-click the script to open it in your code editor
+
+3. Replace the content with the following code:
 
 ```csharp
 using UnityEngine;
@@ -37,20 +76,39 @@ public class CubeController : MonoBehaviour
 }
 ```
 
-### 📌 Steps to Make It Work:
+---
 
-1. **Attach Script to Cube**:
+## 🧩 Step 4: Attach Script to Cube
 
-   * Drag and drop this script onto the cube GameObject in the Unity Editor.
+1. Select the `Player` cube in the **Hierarchy**
+2. In the **Inspector**, click `Add Component`
+3. Search for `CubeController` and add it
 
-2. **Input Settings (if needed)**:
+---
 
-   * By default, Unity's Input Manager maps `Horizontal` and `Vertical` to analog stick movement (left stick). You can check this under:
+## 🎮 Step 5: Test Controller Input
 
-     * `Edit > Project Settings > Input Manager`
+1. Plug in your game controller
+2. Click the **Play** button in Unity
+3. Move the **left analog stick** to move the cube
+4. Press **A, B, X, Y** to see console logs
 
-3. **Test with Controller**:
+---
 
-   * Connect your game controller and enter Play mode. Move the left analog stick to move the cube.
+## 🛠️ Optional: Add Ground
 
-Let me know if you want to use physics-based movement (with Rigidbody) or rotation too.
+* Right-click in the **Hierarchy** → `3D Object` → `Plane`
+* Rename it `Ground`
+* Scale or position it as needed
+
+---
+
+## 📌 Notes
+
+* The cube moves on the **X-Z plane**
+* `Horizontal` and `Vertical` axes are mapped to the **left analog stick** by default
+* For smoother or physics-based movement, consider using `Rigidbody` with `AddForce` or `MovePosition`
+
+---
+
+Let me know if you'd like to include rotation, Rigidbody physics, or camera follow!

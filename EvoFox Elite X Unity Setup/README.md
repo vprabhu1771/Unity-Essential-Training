@@ -88,6 +88,14 @@ public class PlayerController : MonoBehaviour
 
 ---
 
+### 🕹 Gamepad Layout Ideas
+
+* **D-Pad**: 4 buttons
+* **ABXY**: 4 buttons
+* **Joystick**: 2-axis analog input
+* **L1, R1, L2, R2**
+* **Start, Select, Home**
+
 #### ✅ Option 2: **Legacy Input Manager (Not Recommended for New Projects)**
 
 Go to `Edit` → `Project Settings` → `Input Manager`.

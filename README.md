@@ -24,3 +24,8 @@ In **Unity**, here are the default **keyboard shortcuts** for **Move**, **Rotate
 * Use the **Toolbar** at the top-left of the Scene view to switch between tools as well.
 
 Let me know if you need the shortcuts for 2D or the newer Unity input system too.
+
+
+# Reset Layout
+
+Window -> Layouts -> Reset All Layouts

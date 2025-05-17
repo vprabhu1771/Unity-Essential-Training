@@ -112,3 +112,112 @@ public class CubeController : MonoBehaviour
 ---
 
 Let me know if you'd like to include rotation, Rigidbody physics, or camera follow!
+
+
+Here’s a **single Unity C# script** that combines:
+
+✅ Analog stick movement (using `Rigidbody`)
+✅ Right stick rotation
+✅ Smooth camera follow
+
+---
+
+## 📜 Script: `CubeControllerFull.cs`
+
+```csharp
+using UnityEngine;
+
+public class CubeControllerFull : MonoBehaviour
+{
+    [Header("Movement")]
+    public float moveSpeed = 5f;
+    private Rigidbody rb;
+
+    [Header("Rotation")]
+    public float rotationSpeed = 100f;
+
+    [Header("Camera Follow")]
+    public Transform cameraTransform;
+    public Vector3 cameraOffset = new Vector3(0f, 5f, -10f);
+    public float cameraSmoothSpeed = 0.125f;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+
+        if (cameraTransform == null && Camera.main != null)
+        {
+            cameraTransform = Camera.main.transform;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        // Movement (left stick)
+        float moveX = Input.GetAxis("Horizontal");
+        float moveZ = Input.GetAxis("Vertical");
+        Vector3 move = new Vector3(moveX, 0f, moveZ) * moveSpeed;
+        Vector3 newVelocity = new Vector3(move.x, rb.velocity.y, move.z);
+        rb.velocity = newVelocity;
+    }
+
+    void Update()
+    {
+        // Rotation (right stick)
+        float rotateX = Input.GetAxis("RightStickHorizontal");
+        float rotateY = Input.GetAxis("RightStickVertical");
+        Vector3 rotation = new Vector3(rotateY, rotateX, 0f);
+        transform.Rotate(rotation * rotationSpeed * Time.deltaTime);
+
+        // Camera follow
+        if (cameraTransform != null)
+        {
+            Vector3 desiredPos = transform.position + cameraOffset;
+            Vector3 smoothedPos = Vector3.Lerp(cameraTransform.position, desiredPos, cameraSmoothSpeed);
+            cameraTransform.position = smoothedPos;
+            cameraTransform.LookAt(transform);
+        }
+
+        // Optional: Log button presses
+        if (Input.GetKeyDown(KeyCode.JoystickButton0)) Debug.Log("A button pressed");
+        if (Input.GetKeyDown(KeyCode.JoystickButton1)) Debug.Log("B button pressed");
+        if (Input.GetKeyDown(KeyCode.JoystickButton2)) Debug.Log("X button pressed");
+        if (Input.GetKeyDown(KeyCode.JoystickButton3)) Debug.Log("Y button pressed");
+    }
+}
+```
+
+---
+
+## 🧩 Unity Setup
+
+1. **Create a Cube**
+
+   * Right-click → `3D Object` → `Cube`
+   * Rename to `Player`
+
+2. **Add Rigidbody**
+
+   * Select cube → `Add Component` → `Rigidbody`
+
+3. **Create/Adjust Camera**
+
+   * Use Main Camera
+   * No need for a separate script — this one handles following
+
+4. **Attach Script**
+
+   * Drag `CubeControllerFull.cs` to the Cube
+   * Assign the `cameraTransform` (optional; will default to Main Camera)
+
+5. **Input Manager (for right stick)**
+
+   * Go to `Edit > Project Settings > Input Manager`
+   * Duplicate `Horizontal` and `Vertical` axes:
+
+     * Rename to `RightStickHorizontal` → Axis = `4th axis (Joystick Axis)`
+     * Rename to `RightStickVertical` → Axis = `5th axis (Joystick Axis)`
+
+---
+
+Let me know if you want to add jumping, animations, or gamepad UI icons too!

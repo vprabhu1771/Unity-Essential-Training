@@ -114,6 +114,151 @@ public class CubeController : MonoBehaviour
 Let me know if you'd like to include rotation, Rigidbody physics, or camera follow!
 
 
+# Rotation, Rigidbody Physics Movement, Camera Follow
+
+Here are **three separate README-style guides** to extend the cube movement example with:
+
+1. **Rotation**
+2. **Rigidbody Physics Movement**
+3. **Camera Follow**
+
+---
+
+## 📄 1. Cube Rotation with Analog Stick
+
+### 🎯 Goal
+
+Rotate the cube using the **right analog stick**.
+
+### 📜 Script: `CubeRotator.cs`
+
+```csharp
+using UnityEngine;
+
+public class CubeRotator : MonoBehaviour
+{
+    public float rotationSpeed = 100f;
+
+    void Update()
+    {
+        float rotateX = Input.GetAxis("RightStickHorizontal");
+        float rotateY = Input.GetAxis("RightStickVertical");
+
+        Vector3 rotation = new Vector3(rotateY, rotateX, 0f);
+        transform.Rotate(rotation * rotationSpeed * Time.deltaTime);
+    }
+}
+```
+
+### 🔧 Input Setup (if needed)
+
+Unity may not have `RightStickHorizontal` and `RightStickVertical` by default:
+
+1. Go to **Edit > Project Settings > Input Manager**
+2. Duplicate existing axes like `Horizontal`
+3. Rename them to:
+
+   * `RightStickHorizontal` (use `Joy Num Axis 4`)
+   * `RightStickVertical` (use `Joy Num Axis 5`)
+
+### 🚀 How to Use
+
+* Attach `CubeRotator` to the same cube
+* Move the **right analog stick** to rotate the cube
+
+---
+
+## 📄 2. Rigidbody Physics-Based Movement
+
+### 🎯 Goal
+
+Move the cube using Rigidbody for realistic physics (gravity, collisions).
+
+### 📜 Script: `CubePhysicsController.cs`
+
+```csharp
+using UnityEngine;
+
+[RequireComponent(typeof(Rigidbody))]
+public class CubePhysicsController : MonoBehaviour
+{
+    public float moveSpeed = 5f;
+    private Rigidbody rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void FixedUpdate()
+    {
+        float moveX = Input.GetAxis("Horizontal");
+        float moveZ = Input.GetAxis("Vertical");
+
+        Vector3 move = new Vector3(moveX, 0f, moveZ) * moveSpeed;
+        Vector3 newVelocity = new Vector3(move.x, rb.velocity.y, move.z);
+
+        rb.velocity = newVelocity;
+    }
+}
+```
+
+### 🧱 Rigidbody Setup
+
+1. Select your cube
+2. Click `Add Component` → `Rigidbody`
+3. Make sure:
+
+   * `Use Gravity` = ✅
+   * `Is Kinematic` = ❌
+
+---
+
+## 📄 3. Smooth Camera Follow
+
+### 🎯 Goal
+
+Make the camera follow the cube smoothly.
+
+### 📜 Script: `CameraFollow.cs`
+
+```csharp
+using UnityEngine;
+
+public class CameraFollow : MonoBehaviour
+{
+    public Transform target;
+    public Vector3 offset = new Vector3(0f, 5f, -10f);
+    public float smoothSpeed = 0.125f;
+
+    void LateUpdate()
+    {
+        if (!target) return;
+
+        Vector3 desiredPosition = target.position + offset;
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+
+        transform.position = smoothedPosition;
+        transform.LookAt(target);
+    }
+}
+```
+
+### 🧩 Setup Instructions
+
+1. Create an empty GameObject named `CameraRig` (optional)
+2. Attach this script to the `Main Camera`
+3. Drag the `Cube` into the `Target` field in the Inspector
+4. Adjust the offset if needed (higher Y = top-down view)
+
+---
+
+Let me know if you want all three merged into a single script or scene setup!
+
+
+
+# single Unity C# script
+
 Here’s a **single Unity C# script** that combines:
 
 ✅ Analog stick movement (using `Rigidbody`)

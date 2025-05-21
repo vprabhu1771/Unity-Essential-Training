@@ -1,6 +1,10 @@
 # Fix Pink Material
 
 ```
+https://www.youtube.com/watch?v=goZ6FccQJNg
+```
+
+```
 Window -> Rendering -> Render Pipeline Converter
 ```
 

@@ -2,6 +2,14 @@
 https://www.youtube.com/watch?v=K86JflUmCLY
 ```
 
+```
+https://www.youtube.com/watch?v=DU-yminXEX0
+```
+
+```
+https://github.com/PrismYoutube/Unity-Car-Controller
+```
+
 New Project -> 3D -> Project Name -> SuperCarController -> Create Project
 
 # Unity Asset Store

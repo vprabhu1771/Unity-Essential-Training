@@ -6,7 +6,7 @@ New Project -> 3D -> Project Name -> SuperCarController -> Create Project
 
 # Unity Asset Store
 
-Home -> Tools -> Phusics -> PROMETEO: Car Controller -> Add to My Assets
+Home -> Tools -> Physics -> PROMETEO: Car Controller -> Add to My Assets
 
 Home -> Audio -> Sound FX -> Transportation -> Vehicle - Essentials -> Add to My Assets
 
